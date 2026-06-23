@@ -99,4 +99,4 @@ To stop the servers, press Ctrl+C in each terminal window.
 
 ---
 
-**Note:** Demo application with in-memory data. Not production-ready without database, authentication, and security implementation.
+**Note:** Demo application with in-memory data. Not production-ready without database, authentication, and security implementation. Tested with GitHub Actions.
