@@ -6,6 +6,7 @@ export default {
     orders: '注文',
     finance: '財務',
     demandForecast: '需要予測',
+    restocking: '再入荷',
     companyName: '触媒コンポーネンツ',
     subtitle: '在庫管理システム'
   },
@@ -106,6 +107,7 @@ export default {
     title: '注文',
     description: '顧客注文の表示と管理',
     allOrders: 'すべての注文',
+    submittedOrders: '送信済み注文',
     totalOrders: '総注文数',
     totalRevenue: '総収益',
     avgOrderValue: '平均注文額',
@@ -125,7 +127,8 @@ export default {
       totalValue: '合計金額',
       status: 'ステータス',
       expectedDelivery: '予定配達日',
-      actualDelivery: '実際の配達日'
+      actualDelivery: '実際の配達日',
+      leadTime: 'リードタイム'
     }
   },
 
@@ -185,6 +188,32 @@ export default {
       change: '変化',
       trend: 'トレンド',
       period: '期間'
+    }
+  },
+
+  // Restocking
+  restocking: {
+    title: '再入荷',
+    description: '需要予測に基づく再入荷の推奨を確認し、注文を行う',
+    budgetLabel: '利用可能な予算',
+    recommendations: '推奨品目',
+    totalCost: '選択合計',
+    remainingBudget: '残り予算',
+    placeOrder: '注文する',
+    placingOrder: '注文中...',
+    orderSuccess: '注文{orderNumber}が正常に送信されました',
+    budgetTooLow: 'この予算では完全に再入荷できる品目がありません',
+    noInventoryData: '在庫データがありません',
+    demandMet: '現在の在庫が予測需要を満たしています',
+    table: {
+      sku: 'SKU',
+      itemName: '品目名',
+      trend: 'トレンド',
+      quantityOnHand: '手持在庫数',
+      forecastedDemand: '予測需要',
+      restockQuantity: '再入荷数量',
+      unitCost: '単価',
+      restockCost: '再入荷コスト'
     }
   },
 
@@ -359,7 +388,14 @@ export default {
     '48V DC Power Supply Unit': '48V DC電源ユニット',
     'USB-C PD 100W Power Supply': 'USB-C PD 100W電源',
     'Battery Backup Power Supply': 'バッテリバックアップ電源',
-    'Adjustable Bench Power Supply': '可変ベンチ電源'
+    'Adjustable Bench Power Supply': '可変ベンチ電源',
+    'Industrial Widget Type A': '産業用ウィジェットタイプA',
+    'Steel Bearing Assembly': 'スチールベアリングアセンブリ',
+    'High-Temperature Gasket': '高温ガスケット',
+    'Electric Motor 5HP': '電動モータ5HP',
+    'Oil Filter Cartridge': 'オイルフィルターカートリッジ',
+    'Pressure Relief Valve': '安全弁',
+    'Logic Controller Board': 'ロジックコントローラ基板'
   },
 
   // Customer Names
