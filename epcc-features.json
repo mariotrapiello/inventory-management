@@ -1,0 +1,36 @@
+[
+  {
+    "id": "F001",
+    "name": "CSV Export Button on Inventory Page",
+    "description": "Add a CSV export button to the inventory page that exports filtered inventory items",
+    "status": "verified",
+    "passes": true,
+    "subtasks": [
+      {
+        "title": "Add export button to card header",
+        "status": "completed"
+      },
+      {
+        "title": "Implement CSV generation logic",
+        "status": "completed"
+      },
+      {
+        "title": "Test export functionality",
+        "status": "completed"
+      },
+      {
+        "title": "Verify CSV contains all inventory columns",
+        "status": "completed"
+      }
+    ],
+    "verifiedAt": "2026-06-23T00:00:00Z",
+    "acceptanceCriteria": [
+      "CSV export button visible in the inventory page card header",
+      "CSV file contains all inventory columns (SKU, Item Name, Category, Quantity, Reorder Point, Unit Cost, Total Value, Location, Status)",
+      "CSV respects current filters (warehouse, category)",
+      "CSV includes only filtered items visible in the table",
+      "Exported filename includes timestamp for easy identification",
+      "CSV is properly formatted with headers and escaped values"
+    ]
+  }
+]

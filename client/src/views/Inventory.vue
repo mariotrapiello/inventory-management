@@ -11,7 +11,18 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">{{ t('inventory.stockLevels') }} ({{ filteredItems.length }} {{ t('inventory.skus') }})</h3>
-          <div class="search-box">
+          <div class="header-controls">
+            <button
+              @click="exportToCSV"
+              class="export-btn"
+              :title="t('inventory.exportCSV') || 'Export to CSV'"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              {{ t('inventory.export') || 'Export CSV' }}
+            </button>
+            <div class="search-box">
             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
             </svg>
@@ -31,6 +42,7 @@
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
               </svg>
             </button>
+            </div>
           </div>
         </div>
         <div class="table-container">
@@ -201,6 +213,64 @@ export default {
       showItemModal.value = true
     }
 
+    const exportToCSV = () => {
+      // Prepare CSV headers
+      const headers = [
+        'SKU',
+        'Item Name',
+        'Category',
+        'Quantity on Hand',
+        'Reorder Point',
+        'Unit Cost',
+        'Total Value',
+        'Location',
+        'Status'
+      ]
+
+      // Prepare CSV rows with filtered items
+      const rows = filteredItems.value.map(item => [
+        escapeCSVField(item.sku),
+        escapeCSVField(translateProductName(item.name)),
+        escapeCSVField(translateCategory(item.category)),
+        item.quantity_on_hand,
+        item.reorder_point,
+        item.unit_cost.toFixed(2),
+        (item.quantity_on_hand * item.unit_cost).toFixed(2),
+        escapeCSVField(translateWarehouse(item.location)),
+        escapeCSVField(getStockStatus(item))
+      ])
+
+      // Combine headers and rows
+      const csvContent = [
+        headers.join(','),
+        ...rows.map(row => row.join(','))
+      ].join('\n')
+
+      // Create blob and download
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
+      const timestamp = new Date().toISOString().split('T')[0]
+      const filename = `inventory_${timestamp}.csv`
+
+      const link = document.createElement('a')
+      const url = URL.createObjectURL(blob)
+      link.setAttribute('href', url)
+      link.setAttribute('download', filename)
+      link.style.visibility = 'hidden'
+
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+
+    const escapeCSVField = (field) => {
+      if (field === null || field === undefined) return ''
+      const fieldStr = String(field)
+      if (fieldStr.includes(',') || fieldStr.includes('"') || fieldStr.includes('\n')) {
+        return `"${fieldStr.replace(/"/g, '""')}"`
+      }
+      return fieldStr
+    }
+
     onMounted(loadInventory)
 
     return {
@@ -218,7 +288,9 @@ export default {
       showItemDetail,
       currencySymbol,
       translateProductName,
-      translateWarehouse
+      translateWarehouse,
+      exportToCSV,
+      escapeCSVField
     }
   }
 }
@@ -245,6 +317,42 @@ export default {
   gap: 1.5rem;
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid #e2e8f0;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.export-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.export-btn:hover {
+  background: #2563eb;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.export-btn:active {
+  background: #1d4ed8;
 }
 
 .card-title {
