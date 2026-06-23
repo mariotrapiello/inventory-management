@@ -1,0 +1,365 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "Catalyst Components" [level=1] [ref=e7]
+        - generic [ref=e8]: Inventory Management System
+      - navigation [ref=e9]:
+        - link "Overview" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "Inventory" [ref=e11] [cursor=pointer]:
+          - /url: /inventory
+        - link "Orders" [ref=e12] [cursor=pointer]:
+          - /url: /orders
+        - link "Finance" [ref=e13] [cursor=pointer]:
+          - /url: /spending
+        - link "Demand Forecast" [ref=e14] [cursor=pointer]:
+          - /url: /demand
+        - link "Restocking" [ref=e15] [cursor=pointer]:
+          - /url: /restocking
+        - link "Reports" [ref=e16] [cursor=pointer]:
+          - /url: /reports
+      - button "English" [ref=e18] [cursor=pointer]:
+        - img [ref=e19]
+        - generic [ref=e23]: English
+        - img [ref=e24]
+      - button "JD John Doe" [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: JD
+        - generic [ref=e29]: John Doe
+        - img [ref=e30]
+  - generic [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: Time Period
+        - combobox [ref=e37] [cursor=pointer]:
+          - option "All Months" [selected]
+          - option "January"
+          - option "February"
+          - option "March"
+          - option "April"
+          - option "May"
+          - option "June"
+          - option "July"
+          - option "August"
+          - option "September"
+          - option "October"
+          - option "November"
+          - option "December"
+      - generic [ref=e38]:
+        - generic [ref=e39]: Location
+        - combobox [ref=e40] [cursor=pointer]:
+          - option "All" [selected]
+          - option "San Francisco"
+          - option "London"
+          - option "Tokyo"
+      - generic [ref=e41]:
+        - generic [ref=e42]: Category
+        - combobox [ref=e43] [cursor=pointer]:
+          - option "All" [selected]
+          - option "Circuit Boards"
+          - option "Sensors"
+          - option "Actuators"
+          - option "Controllers"
+          - option "Power Supplies"
+      - generic [ref=e44]:
+        - generic [ref=e45]: Order Status
+        - combobox [ref=e46] [cursor=pointer]:
+          - option "All" [selected]
+          - option "Delivered"
+          - option "Shipped"
+          - option "Processing"
+          - option "Backordered"
+    - button "Reset all filters" [disabled] [ref=e47]:
+      - img [ref=e48]
+  - main [ref=e50]:
+    - generic [ref=e51]:
+      - heading "Overview" [level=2] [ref=e53]
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - heading "Key Performance Indicators" [level=3] [ref=e56]
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e59]: Inventory Turnover Rate
+              - generic [ref=e60]: "4.2"
+              - generic [ref=e61]: "Goal: 4.5 (-6.67%)"
+            - generic [ref=e64]:
+              - generic [ref=e65]: Orders Fulfilled
+              - generic [ref=e66]: "187"
+              - generic [ref=e67]: "Goal: 200 (93.50%)"
+            - generic [ref=e70]:
+              - generic [ref=e71]: Order Fill Rate
+              - generic [ref=e72]: 96.8%
+              - generic [ref=e73]: "Goal: 95% (+1.80%)"
+            - generic [ref=e76]:
+              - generic [ref=e77]: Revenue (Orders) YTD
+              - generic [ref=e78]: $31,166,853
+              - generic [ref=e79]: "Goal: $9,600,000 (+224.7%)"
+            - generic [ref=e82]:
+              - generic [ref=e83]: Avg Processing Time (Days)
+              - generic [ref=e84]: "2.8"
+              - generic [ref=e85]: "Goal: 3.0 (-6.67%)"
+        - heading "Summary" [level=3] [ref=e89]
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - heading "Order Health" [level=3] [ref=e93]
+            - generic [ref=e95]:
+              - generic [ref=e96]:
+                - img [ref=e97]:
+                  - generic [ref=e103]: Total
+                  - generic [ref=e104]: "250"
+                - generic [ref=e105]:
+                  - generic [ref=e106]: Delivered
+                  - generic [ref=e108]: Shipped
+                  - generic [ref=e110]: Processing
+                  - generic [ref=e112]: Backordered
+              - generic [ref=e114]:
+                - generic [ref=e115]:
+                  - generic [ref=e116]: Revenue
+                  - generic [ref=e117]: $31,166,853
+                - generic [ref=e118]:
+                  - generic [ref=e119]: Avg Order Value
+                  - generic [ref=e120]: $124,667
+                - generic [ref=e121]:
+                  - generic [ref=e122]: On-Time Rate
+                  - generic [ref=e123]: 93.3%
+                - generic [ref=e124]:
+                  - generic [ref=e125]: Avg Fulfillment (Days)
+                  - generic [ref=e126]: "8.7"
+          - generic [ref=e127]:
+            - heading "Inventory Value by Category" [level=3] [ref=e129]
+            - generic [ref=e131]:
+              - generic [ref=e132]:
+                - generic [ref=e133]: Circuit Boards
+                - generic [ref=e136]: $30.3K
+              - generic [ref=e137]:
+                - generic [ref=e138]: Sensors
+                - generic [ref=e141]: $170.1K
+              - generic [ref=e142]:
+                - generic [ref=e143]: Actuators
+                - generic [ref=e146]: $122.3K
+              - generic [ref=e147]:
+                - generic [ref=e148]: Controllers
+                - generic [ref=e151]: $91.7K
+              - generic [ref=e152]:
+                - generic [ref=e153]: Power Supplies
+                - generic [ref=e156]: $87.1K
+          - generic [ref=e157]:
+            - heading "Inventory Shortages (4)" [level=3] [ref=e159]
+            - table [ref=e161]:
+              - rowgroup [ref=e162]:
+                - row "Order ID SKU Item Name Quantity Needed Quantity Available Shortage Days Delayed Priority Actions" [ref=e163]:
+                  - columnheader "Order ID" [ref=e164]
+                  - columnheader "SKU" [ref=e165]
+                  - columnheader "Item Name" [ref=e166]
+                  - columnheader "Quantity Needed" [ref=e167]
+                  - columnheader "Quantity Available" [ref=e168]
+                  - columnheader "Shortage" [ref=e169]
+                  - columnheader "Days Delayed" [ref=e170]
+                  - columnheader "Priority" [ref=e171]
+                  - columnheader "Actions" [ref=e172]
+              - rowgroup [ref=e173]:
+                - row "ORD-2025-0927 FLT-405 Oil Filter Cartridge 1200 850 350 units short 3 days Medium Create PO" [ref=e174]:
+                  - cell "ORD-2025-0927" [ref=e175] [cursor=pointer]:
+                    - strong [ref=e176]: ORD-2025-0927
+                  - cell "FLT-405" [ref=e177] [cursor=pointer]:
+                    - strong [ref=e178]: FLT-405
+                  - cell "Oil Filter Cartridge" [ref=e179] [cursor=pointer]
+                  - cell "1200" [ref=e180] [cursor=pointer]
+                  - cell "850" [ref=e181] [cursor=pointer]
+                  - cell "350 units short" [ref=e182] [cursor=pointer]:
+                    - generic [ref=e183]: 350 units short
+                  - cell "3 days" [ref=e184] [cursor=pointer]
+                  - cell "Medium" [ref=e185] [cursor=pointer]:
+                    - generic [ref=e186]: Medium
+                  - cell "Create PO" [ref=e187]:
+                    - button "Create PO" [ref=e188] [cursor=pointer]
+                - row "ORD-2025-0928 MTR-304 Electric Motor 5HP 45 35 10 units short 2 days High Create PO" [ref=e189]:
+                  - cell "ORD-2025-0928" [ref=e190] [cursor=pointer]:
+                    - strong [ref=e191]: ORD-2025-0928
+                  - cell "MTR-304" [ref=e192] [cursor=pointer]:
+                    - strong [ref=e193]: MTR-304
+                  - cell "Electric Motor 5HP" [ref=e194] [cursor=pointer]
+                  - cell "45" [ref=e195] [cursor=pointer]
+                  - cell "35" [ref=e196] [cursor=pointer]
+                  - cell "10 units short" [ref=e197] [cursor=pointer]:
+                    - generic [ref=e198]: 10 units short
+                  - cell "2 days" [ref=e199] [cursor=pointer]
+                  - cell "High" [ref=e200] [cursor=pointer]:
+                    - generic [ref=e201]: High
+                  - cell "Create PO" [ref=e202]:
+                    - button "Create PO" [ref=e203] [cursor=pointer]
+                - row "ORD-2025-0929 VLV-506 Pressure Relief Valve 180 100 80 units short 1 days High Create PO" [ref=e204]:
+                  - cell "ORD-2025-0929" [ref=e205] [cursor=pointer]:
+                    - strong [ref=e206]: ORD-2025-0929
+                  - cell "VLV-506" [ref=e207] [cursor=pointer]:
+                    - strong [ref=e208]: VLV-506
+                  - cell "Pressure Relief Valve" [ref=e209] [cursor=pointer]
+                  - cell "180" [ref=e210] [cursor=pointer]
+                  - cell "100" [ref=e211] [cursor=pointer]
+                  - cell "80 units short" [ref=e212] [cursor=pointer]:
+                    - generic [ref=e213]: 80 units short
+                  - cell "1 days" [ref=e214] [cursor=pointer]
+                  - cell "High" [ref=e215] [cursor=pointer]:
+                    - generic [ref=e216]: High
+                  - cell "Create PO" [ref=e217]:
+                    - button "Create PO" [ref=e218] [cursor=pointer]
+                - row "ORD-2025-0930 WDG-001 Industrial Widget Type A 450 275 175 units short 5 days Medium Create PO" [ref=e219]:
+                  - cell "ORD-2025-0930" [ref=e220] [cursor=pointer]:
+                    - strong [ref=e221]: ORD-2025-0930
+                  - cell "WDG-001" [ref=e222] [cursor=pointer]:
+                    - strong [ref=e223]: WDG-001
+                  - cell "Industrial Widget Type A" [ref=e224] [cursor=pointer]
+                  - cell "450" [ref=e225] [cursor=pointer]
+                  - cell "275" [ref=e226] [cursor=pointer]
+                  - cell "175 units short" [ref=e227] [cursor=pointer]:
+                    - generic [ref=e228]: 175 units short
+                  - cell "5 days" [ref=e229] [cursor=pointer]
+                  - cell "Medium" [ref=e230] [cursor=pointer]:
+                    - generic [ref=e231]: Medium
+                  - cell "Create PO" [ref=e232]:
+                    - button "Create PO" [ref=e233] [cursor=pointer]
+          - generic [ref=e234]:
+            - heading "Top Products by Revenue" [level=3] [ref=e236]
+            - table [ref=e238]:
+              - rowgroup [ref=e239]:
+                - row "Product SKU Category Units Ordered Revenue First Order Stock Status" [ref=e240]:
+                  - columnheader "Product" [ref=e241]
+                  - columnheader "SKU" [ref=e242]
+                  - columnheader "Category" [ref=e243]
+                  - columnheader "Units Ordered" [ref=e244]
+                  - columnheader "Revenue" [ref=e245]
+                  - columnheader "First Order" [ref=e246]
+                  - columnheader "Stock Status" [ref=e247]
+              - rowgroup [ref=e248]:
+                - row "Micro Servo Motor SRV-301 Actuators 10067 $3,216,557 Jan 2, 2025 Low Stock" [ref=e249] [cursor=pointer]:
+                  - cell "Micro Servo Motor" [ref=e250]:
+                    - strong [ref=e251]: Micro Servo Motor
+                  - cell "SRV-301" [ref=e252]
+                  - cell "Actuators" [ref=e253]
+                  - cell "10067" [ref=e254]
+                  - cell "$3,216,557" [ref=e255]:
+                    - strong [ref=e256]: $3,216,557
+                  - cell "Jan 2, 2025" [ref=e257]
+                  - cell "Low Stock" [ref=e258]:
+                    - generic [ref=e259]: Low Stock
+                - row "Stepper Motor NEMA 17 STP-303 Actuators 8865 $1,524,211 Jan 2, 2025 In Stock" [ref=e260] [cursor=pointer]:
+                  - cell "Stepper Motor NEMA 17" [ref=e261]:
+                    - strong [ref=e262]: Stepper Motor NEMA 17
+                  - cell "STP-303" [ref=e263]
+                  - cell "Actuators" [ref=e264]
+                  - cell "8865" [ref=e265]
+                  - cell "$1,524,211" [ref=e266]:
+                    - strong [ref=e267]: $1,524,211
+                  - cell "Jan 2, 2025" [ref=e268]
+                  - cell "In Stock" [ref=e269]:
+                    - generic [ref=e270]: In Stock
+                - row "Temperature Sensor Module TMP-201 Sensors 16023 $1,026,639 Jan 2, 2025 Low Stock" [ref=e271] [cursor=pointer]:
+                  - cell "Temperature Sensor Module" [ref=e272]:
+                    - strong [ref=e273]: Temperature Sensor Module
+                  - cell "TMP-201" [ref=e274]
+                  - cell "Sensors" [ref=e275]
+                  - cell "16023" [ref=e276]
+                  - cell "$1,026,639" [ref=e277]:
+                    - strong [ref=e278]: $1,026,639
+                  - cell "Jan 2, 2025" [ref=e279]
+                  - cell "Low Stock" [ref=e280]:
+                    - generic [ref=e281]: Low Stock
+                - row "Drive Pulley PLY-901 Sensors 9828 $587,053 Jan 2, 2025 In Stock" [ref=e282] [cursor=pointer]:
+                  - cell "Drive Pulley" [ref=e283]:
+                    - strong [ref=e284]: Drive Pulley
+                  - cell "PLY-901" [ref=e285]
+                  - cell "Sensors" [ref=e286]
+                  - cell "9828" [ref=e287]
+                  - cell "$587,053" [ref=e288]:
+                    - strong [ref=e289]: $587,053
+                  - cell "Jan 2, 2025" [ref=e290]
+                  - cell "In Stock" [ref=e291]:
+                    - generic [ref=e292]: In Stock
+                - row "Pressure Sensor Module PRS-203 Sensors 7604 $353,654 Jan 2, 2025 In Stock" [ref=e293] [cursor=pointer]:
+                  - cell "Pressure Sensor Module" [ref=e294]:
+                    - strong [ref=e295]: Pressure Sensor Module
+                  - cell "PRS-203" [ref=e296]
+                  - cell "Sensors" [ref=e297]
+                  - cell "7604" [ref=e298]
+                  - cell "$353,654" [ref=e299]:
+                    - strong [ref=e300]: $353,654
+                  - cell "Jan 2, 2025" [ref=e301]
+                  - cell "In Stock" [ref=e302]:
+                    - generic [ref=e303]: In Stock
+                - row "Dual Layer PCB Assembly PCB-002 Circuit Boards 18586 $2,005,556 Jan 7, 2025 In Stock" [ref=e304] [cursor=pointer]:
+                  - cell "Dual Layer PCB Assembly" [ref=e305]:
+                    - strong [ref=e306]: Dual Layer PCB Assembly
+                  - cell "PCB-002" [ref=e307]
+                  - cell "Circuit Boards" [ref=e308]
+                  - cell "18586" [ref=e309]
+                  - cell "$2,005,556" [ref=e310]:
+                    - strong [ref=e311]: $2,005,556
+                  - cell "Jan 7, 2025" [ref=e312]
+                  - cell "In Stock" [ref=e313]:
+                    - generic [ref=e314]: In Stock
+                - row "Compression Spring SPR-602 Sensors 11940 $868,418 Jan 8, 2025 In Stock" [ref=e315] [cursor=pointer]:
+                  - cell "Compression Spring" [ref=e316]:
+                    - strong [ref=e317]: Compression Spring
+                  - cell "SPR-602" [ref=e318]
+                  - cell "Sensors" [ref=e319]
+                  - cell "11940" [ref=e320]
+                  - cell "$868,418" [ref=e321]:
+                    - strong [ref=e322]: $868,418
+                  - cell "Jan 8, 2025" [ref=e323]
+                  - cell "In Stock" [ref=e324]:
+                    - generic [ref=e325]: In Stock
+                - row "H-Bridge Motor Driver DRV-405 Controllers 4916 $2,034,510 Jan 18, 2025 In Stock" [ref=e326] [cursor=pointer]:
+                  - cell "H-Bridge Motor Driver" [ref=e327]:
+                    - strong [ref=e328]: H-Bridge Motor Driver
+                  - cell "DRV-405" [ref=e329]
+                  - cell "Controllers" [ref=e330]
+                  - cell "4916" [ref=e331]
+                  - cell "$2,034,510" [ref=e332]:
+                    - strong [ref=e333]: $2,034,510
+                  - cell "Jan 18, 2025" [ref=e334]
+                  - cell "In Stock" [ref=e335]:
+                    - generic [ref=e336]: In Stock
+                - row "LED Driver IC LED-406 Controllers 9383 $999,390 Jan 18, 2025 In Stock" [ref=e337] [cursor=pointer]:
+                  - cell "LED Driver IC" [ref=e338]:
+                    - strong [ref=e339]: LED Driver IC
+                  - cell "LED-406" [ref=e340]
+                  - cell "Controllers" [ref=e341]
+                  - cell "9383" [ref=e342]
+                  - cell "$999,390" [ref=e343]:
+                    - strong [ref=e344]: $999,390
+                  - cell "Jan 18, 2025" [ref=e345]
+                  - cell "In Stock" [ref=e346]:
+                    - generic [ref=e347]: In Stock
+                - row "32-bit ARM Microcontroller MCU-402 Controllers 6931 $191,686 Jan 18, 2025 In Stock" [ref=e348] [cursor=pointer]:
+                  - cell "32-bit ARM Microcontroller" [ref=e349]:
+                    - strong [ref=e350]: 32-bit ARM Microcontroller
+                  - cell "MCU-402" [ref=e351]
+                  - cell "Controllers" [ref=e352]
+                  - cell "6931" [ref=e353]
+                  - cell "$191,686" [ref=e354]:
+                    - strong [ref=e355]: $191,686
+                  - cell "Jan 18, 2025" [ref=e356]
+                  - cell "In Stock" [ref=e357]:
+                    - generic [ref=e358]: In Stock
+                - row "Digital Signal Processor DSP-403 Controllers 5297 $100,033 Jan 22, 2025 In Stock" [ref=e359] [cursor=pointer]:
+                  - cell "Digital Signal Processor" [ref=e360]:
+                    - strong [ref=e361]: Digital Signal Processor
+                  - cell "DSP-403" [ref=e362]
+                  - cell "Controllers" [ref=e363]
+                  - cell "5297" [ref=e364]
+                  - cell "$100,033" [ref=e365]:
+                    - strong [ref=e366]: $100,033
+                  - cell "Jan 22, 2025" [ref=e367]
+                  - cell "In Stock" [ref=e368]:
+                    - generic [ref=e369]: In Stock
+                - row "Ultrasonic Distance Sensor ULS-205 Sensors 11528 $661,518 Jan 24, 2025 In Stock" [ref=e370] [cursor=pointer]:
+                  - cell "Ultrasonic Distance Sensor" [ref=e371]:
+                    - strong [ref=e372]: Ultrasonic Distance Sensor
+                  - cell "ULS-205" [ref=e373]
+                  - cell "Sensors" [ref=e374]
+                  - cell "11528" [ref=e375]
+                  - cell "$661,518" [ref=e376]:
+                    - strong [ref=e377]: $661,518
+                  - cell "Jan 24, 2025" [ref=e378]
+                  - cell "In Stock" [ref=e379]:
+                    - generic [ref=e380]: In Stock
